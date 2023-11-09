@@ -1,4 +1,3 @@
-const config = require("../config.json");
 const discord = require("discord.js");
 const axios = require("axios");
 
@@ -18,7 +17,7 @@ module.exports = {
    */
   async execute(client, interaction) {
     let location = interaction.options.getString("location");
-    let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/today?unitGroup=metric&include=current&key=${config.api_key}&contentType=json`;
+    let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/today?unitGroup=metric&include=current&key=your_api_key&contentType=json`;
 
     axios
       .get(url)
